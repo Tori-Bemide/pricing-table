@@ -6,11 +6,11 @@
 
 <div align="center">
   <h3>
-    <a href="">
+    <a href="https://tori-bemide.github.io/pricing-table/">
       Demo
     </a>
     <span> | </span>
-    <a href="">
+    <a href="https://github.com/Tori-Bemide/pricing-table">
       Solution
     </a>
     <span> | </span>
@@ -35,7 +35,7 @@
 
 ## Overview
 
-![screenshot](./images/Screenshot.png)
+![screenshot](./resources/Screenshot.png)
 
 ### What I learned
 
