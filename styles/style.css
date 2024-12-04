@@ -1,0 +1,248 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+============================
+Fonts
+============================
+ */
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url(../fonts/BeVietnamPro-Regular.ttf) format(truetype);
+}
+
+/* 
+============================
+Variables
+============================
+ */
+:root {
+  --black: #121826;
+  --grey: #e5e7eb;
+  --white: #ffffff;
+  --blue: #263fa9;
+  --light-grey: #f8fafc;
+  --dark-grey: #4d556233;
+  --darker-grey: #4d5562;
+  --brown: #7c4f1e;
+  --font-family: "Be Vietnam Pro";
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+header {
+  background-image: url("../resources/bg-pattern.png");
+  background-color: var(--light-grey);
+  padding: 3rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--grey);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+header p {
+  max-width: 27.5rem;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--darker-grey);
+  font-size: 1rem;
+}
+
+.column-layout {
+  padding: 3.5rem 0;
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+}
+.team-column,
+.popular-column,
+.enterprise-column,
+.free-column {
+  text-align: center;
+}
+.team-column,
+.free-column {
+  display: none;
+}
+
+.title-column {
+  background: var(--light-grey);
+  width: 90px;
+  align-self: end;
+  margin-bottom: 88px;
+}
+
+@media screen and (min-width: 412px) {
+  .title-column {
+    margin-bottom: 68px;
+  }
+}
+.popular-column {
+  border-radius: 1.5rem;
+}
+.popular-column,
+.popular-column p {
+  background: var(--black);
+  color: var(--light-grey);
+}
+
+.title-column-item,
+.column-item {
+  height: 45px;
+  align-self: center;
+  border-bottom: 1px solid var(--dark-grey);
+  padding: 0.75rem 0.5rem;
+}
+
+.popular-column .column-item {
+  border-bottom-color: var(--dark-grey);
+}
+.title-column-item {
+  background: var(--light-grey);
+  color: var(--black);
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.column-header {
+  display: grid;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.column-header h4 {
+  font-size: 1rem;
+  padding: 0.25rem;
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+}
+
+.popular-column > .column-header > h4 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 5.5rem;
+  border-radius: 2rem;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.column-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.start-link {
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 100%;
+  text-decoration: none;
+  padding: 1.5rem;
+}
+
+.popular-column .start-link {
+  font-weight: 400;
+  background: var(--brown);
+  color: var(--light-grey);
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.arrow {
+  margin-top: 0.05rem;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .columns {
+    grid-template-columns: 200px 1fr 1fr 1fr;
+  }
+  .title-column,
+  .popular-column,
+  .enterprise-column,
+  .team-column {
+    grid-row: 1/2;
+  }
+  .title-column {
+    grid-column: 1/2;
+    margin-bottom: 73px;
+  }
+  .team-column {
+    display: block;
+    grid-column: 2/3;
+  }
+  .popular-column {
+    grid-column: 3/4;
+  }
+
+  .enterprise-column {
+    grid-column: 4/5;
+  }
+
+  .column-header {
+    margin-bottom: 2rem;
+  }
+
+  .title-column-item {
+    width: 200px;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: unset;
+  }
+
+  .arrow {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 876px) {
+  .column-header h3 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .columns {
+    grid-template-columns: 200px repeat(4, 1fr);
+  }
+
+  .free-column {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .team-column {
+    grid-column: 3/4;
+  }
+
+  .popular-column {
+    grid-column: 4/5;
+  }
+
+  .enterprise-column {
+    grid-column: 5/6;
+  }
+}
